@@ -178,35 +178,46 @@ function selectRandom(array) {
 
 function pickMystery() {
 
-  //  pick Mystery: that takes no arguments and returns an object with three properties: _suspect_, _weapon_ and _room_, each holding as a value a card 
-  //  of that specific type. You can get a random card of each type by calling `selectRandom` on each card stack.
+ //You can get a random card of each type by calling `selectRandom` on each card stack.
 
+selectRandom(suspectsArray);
+selectRandom(roomsArray);
+selectRandom(weaponsArray);
+console.log(selectRandom(suspectsArray));
+console.log(selectRandom(roomsArray));
+console.log(selectRandom(weaponsArray));
 
-  // return an object:
+  
   if (true) {
     return {
-      suspect: ' ',
-      weapon: ' ',
-      room: ' ',
+      suspect: selectRandom(suspectsArray),
+      weapon: selectRandom(weaponsArray),
+      room: selectRandom(roomsArray),
     }
   }
   
 }
+console.log (pickMystery());
 
 
 
-
-
-
-
-
-
+/*
+Declare a function named `revealMystery` that receives an _envelope_ `object` (with the shape of the object returned by `pickMystery`) 
+as the single argument, and returns a reveal message in the following format:
+**\<FIRST NAME\> \<LAST NAME\> killed Mr. Boddy using the \<WEAPON\> in the \<ROOM\>!**
+*/
 
 // ITERATION 3
 
-function revealMystery() {
+function revealMystery(pickMystery) {
 
+return `${suspectsArray[0].firstName} ${suspectsArray[0].lastName} killed Mr. Boddy using the ${weaponsArray[0].name} in the ${roomsArray[0].name}!`
 }
+
+console.log(revealMystery(pickMystery));
+
+
+
 
 
 
